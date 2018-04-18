@@ -1,35 +1,31 @@
 $(document).ready(function(){
 
-    //settings for slider
-    var width = 720;
-    var animationSpeed = 1000;
-    var currentSlide = 1;
+    var slideSpeed = 1000
+    var currentSlide = 1
+    var firstSlide = 1 // could be a const
 
-    //cache DOM elements
-    var $slider = $('#slider');
-    var $slideContainer = $('.slides', $slider);
-    var $slides = $('.slide', $slider);
+    var slidesRow = $('.slides') // ul 'box' of lis / slides
+    var slides = $('.slide') // array of slides
+    var lastSlide = slides.length // number of slides
 
-    //animate moving left
     function slideLeft() {
-        if (currentSlide === $slides.length) {
-            currentSlide = 1;
-            $slideContainer.css('margin-left', 0);
+        if (currentSlide === lastSlide) {
+            currentSlide = firstSlide
+            slidesRow.css('margin-left', 0)
         }
-        $slideContainer.animate({'margin-left': '-='+width}, animationSpeed, function() {
+        slidesRow.animate({'margin-left': '-=750'}, slideSpeed, function() {
             currentSlide++
         })
     }
-    //animate moving right
     function slideRight() {
-        if (currentSlide === 1) {
-            $slideContainer.css('margin-left', -3600)
-            currentSlide = $slides.length;
+        if (currentSlide === firstSlide) {
+            currentSlide = lastSlide
+            slidesRow.css('margin-left', -3750)
         }
-        $slideContainer.animate({'margin-left': '+='+width}, animationSpeed, function () {
+        slidesRow.animate({'margin-left': '+=750'}, slideSpeed, function () {
             currentSlide--
         })
     }
-    $('.prev').click(slideLeft);
-    $('.next').click(slideRight);
+    $('.prev').click(slideLeft)
+    $('.next').click(slideRight)
 })
