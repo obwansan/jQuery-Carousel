@@ -7,8 +7,13 @@ $(document).ready(function(){
     var slidesRow = $('.slides') // ul 'box' of lis / slides
     var slides = $('.slide') // array of slides
     var lastSlide = slides.length // number of slides
+    // var $slider = $('#slider');
+    // var $slideContainer = $('.slides');
+    // var $slides = $('.slide');
+
 
     function slideLeft() {
+
         if (currentSlide === lastSlide) {
             currentSlide = firstSlide
             slidesRow.css('margin-left', 0)
@@ -16,11 +21,14 @@ $(document).ready(function(){
         slidesRow.animate({'margin-left': '-=750'}, slideSpeed, function() {
             currentSlide++
         })
+
     }
+
     function slideRight() {
+
         if (currentSlide === firstSlide) {
             currentSlide = lastSlide
-            slidesRow.css('margin-left', -3750)
+            slidesRow.css('margin-left', -5250)
         }
         slidesRow.animate({'margin-left': '+=750'}, slideSpeed, function () {
             currentSlide--
