@@ -1,18 +1,37 @@
 .container {
-    max-width: 750px;
+    max-width: 1000px;
     position: relative;
     margin: auto;
+}
+
+.header {
+    padding-top: 5px;
+    margin: 0 auto;
+}
+
+h1 {
+    text-align: center;
+    padding-bottom: 20px;
+    color: indigo;
+    font-family: "Helvetica Neue", sans-serif;
 }
 
 #slider {
     width: 100%;
     height: 400px;
     overflow: hidden;
+    position: relative;
+    box-shadow: 5px 5px darkslategrey;
+    border-radius: 5px;
+}
+
+#slider:hover {
+
 }
 
 #slider .slides {
     display: block;
-    width: 6000px;
+    width: 8000px;
     height: 400px;
     margin: 0;
     padding: 0;
@@ -21,11 +40,10 @@
 #slider .slide {
     float: left;
     list-style-type: none;
-    width: 750px;
+    width: 1000px;
     height: 400px;
 }
 
-/* helper css, since we don't have images */
 .slide1 {
     background-image: url("imgs/best-17-gelada-baboons-monkeys-guassa-ethiopia-evening-running-cliffs.adapt.1900.1.jpg");
     background-position: center;
@@ -57,11 +75,6 @@
     background-size: cover;
 }
 .slide7 {
-    background-image: url("imgs/best-trees-neem-tree-varanasi-india.adapt.1190.1.jpg");
-    background-position: center;
-    background-size: cover;
-}
-.slide8 {
     background-image: url("imgs/best-under-antarctica-emperor-penguins.adapt.1900.1.jpg");
     background-position: center;
     background-size: cover;
@@ -70,28 +83,45 @@
 /* Next & previous buttons */
 .prev,
 .next {
+    /*display: none;*/
     cursor: pointer;
     position: absolute;
     top: 50%;
-    width: auto;
-    padding: 16px;
+    width: 10px;
+    height: 10px;
+    padding: 20px;
     margin-top: -22px;
-    color: white;
+    color: black;
     font-weight: bold;
-    font-size: 18px;
+    font-size: 35px;
     transition: 0.6s ease;
-    border-radius: 0 3px 3px 0;
+    border-radius: 50%;
+    background-color: #fff;
+    opacity: 0.3;
 }
 
 /* Position the "next button" to the right */
 .next {
     right: 0;
-    border-radius: 3px 0 0 3px;
+    border-radius: 50%;
+    /*display: none;*/
 }
 
+.arrow {
+    display: block;
+    position: absolute;
+}
+
+.arrow-left {
+    margin: -12px -4px;
+}
+
+.arrow-right {
+    margin: -12px -2px;
+}
 
 @media screen and (min-width: 1105px) {
     .container {
-        width: 750px;
+        width: 1000px;
     }
 }

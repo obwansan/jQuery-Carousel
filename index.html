@@ -3,17 +3,16 @@
 <head>
     <title>carousel 1</title>
     <link rel="stylesheet" href="styles.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Black+Han+Sans" rel="stylesheet">
     <script src="jquery-3.2.1.min.js"></script>
-    <script src="js.js"></script>
+    <script src="main.js"></script>
 </head>
 <body>
 
 <div class="container">
     <div class="header">
-        <h1>jQuery Basic Slider</h1>
+        <h1>jQuery Slider</h1>
     </div>
-<!--Last slide has to be same as first slide so when margin is reset to 0
-the first slide replaces the identical last slide. Too fast for eye to see.-->
     <div id="slider">
         <ul class="slides">
             <li class="slide slide1"></li>
@@ -25,10 +24,14 @@ the first slide replaces the identical last slide. Too fast for eye to see.-->
             <li class="slide slide7"></li>
             <li class="slide slide1"></li>
         </ul>
+        <div class="prev">
+            <a class="arrow arrow-left">&#10094;</a>
+        </div>
+        <div class="next">
+            <a class="arrow arrow-right">&#10095;</a>
+        </div>
 
-        <a class="prev">&#10094;</a>
-        <a class="next">&#10095;</a>
-
+    </div>
 </div>
 
 </body>
